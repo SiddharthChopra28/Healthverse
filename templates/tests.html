@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+Tests
+{% endblock title %}
+
+{% block content %}
+
+<div id="tests-heading">
+    Tests Offered
+</div>
+
+<div class="bg-box">
+    <div id="eval" class="choice">
+        <img src="{{hostname}}/static/self-eval.png" alt="Self-evaluation Test" id="choice-img1" class="choice-imgs" onclick="location.href='{{hostname}}/self-eval-test' ">
+        <br>
+        <br>
+        <span class="heading-text">Self-evaluation Test</span>
+    </div>
+
+    <div id="ct" class="choice">
+        <img src="{{hostname}}/static/x-ray.png" alt="Self-evaluation Test" id="choice-img2" class="choice-imgs">
+        <br>
+        <br>
+        <span class="heading-text">X-Ray Evaluation: Coming soon</span>
+    </div>
+
+    <div id="xr" class="choice">
+        <img src="{{hostname}}/static/ct.png" alt="Self-evaluation Test" id="choice-img3" class="choice-imgs" >
+        <br>
+        <br>
+        <span class="heading-text">CT Evaluation: Coming soon</span>
+    </div>
+
+</div>
+
+
+{% endblock content %}

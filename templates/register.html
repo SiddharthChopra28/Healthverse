@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+Register
+{% endblock title %}
+
+{% block content %}
+
+
+
+
+
+{% from 'macros.html' import render_field %}
+<div class="flex-container">
+  <div class="content-container">
+    <div class="form-container">
+      <form method="POST" action="{{hostname}}/register" class="form">
+        <h1>
+          Register
+        </h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert">
+          {{message}}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {%endwith%}
+
+        <br>
+
+        {{form.hidden_tag()}}
+        {%for field in form%}
+        {{render_field(field)}}
+        {%endfor%}
+        <input type="submit" value="Register" class="submit-btn">
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

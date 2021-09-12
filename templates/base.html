@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{hostname}}/static/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="{{hostname}}/static/favicon.ico" type="image/x-icon">
+
+  <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+
+  <nav id="navbar">
+    <span class="filler"></span>
+
+    <span class="logodiv">
+      <a href="{{hostname}}" style="width: min-content;" id="logo">
+        <img src="{{hostname}}/static/logo.png" alt="Logo">
+      </a>
+    </span>
+    <span class="navbar-brand">
+
+      
+      <a href="{{hostname}}/tests" class="navs">Tests</a>
+      <a href="https://www.dropbox.com/s/mvteeiqn023pt0c/extension.zip?dl=0" class="navs">Extension</a>
+      <a href="{{hostname}}" class="navs" id="title">Healthverse</a>
+      <a href="{{hostname}}/tech" class="navs">Our Tech</a>
+      <a href="{{hostname}}/vision" class="navs">Our Vision</a>
+
+    </span>
+    <span class="login">
+      {% if loggedIn %}
+      <span class="box" onclick="dropdown();" id="box">
+        <svg id="user-icon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+          <path fill-rule="evenodd"
+            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+        </svg>
+        <span class="uname">
+          {{username}}
+        </span>
+    
+
+        
+
+      </span>
+
+      <a href="{{hostname}}/logout" class="logout">Logout</a>
+    </span>
+    {%else%}
+      <a href="{{hostname}}/register" class="reg">Register</a>
+      <a href="{{hostname}}/login" class="reg" style="margin-right: 40px;">Login</a>
+    {% endif %}
+
+  </nav>
+  {% with messages = get_flashed_messages(with_categories=True) %}
+  {% if messages %}
+  {% for category, message in messages %}
+    <div class="notification" id="notification-{{loop.index}}">
+      {{message}}
+      <span class = "close" type="button" onclick="hideElement('notification-{{loop.index}}')">&#10006;</span>
+    </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  {% block content %}
+
+  {% endblock content %}
+
+  <script>
+
+    function hideElement(id){
+      document.getElementById(id).remove();
+    }
+
+
+
+    function dropdown() {
+      console.log(document.getElementById("dropdown").classList);
+      document.getElementById("dropdown").classList.toggle("show");
+      document.getElementById("box").classList.toggle("dropped");
+      console.log(document.getElementById("dropdown").classList);
+
+    }
+
+    window.onclick = function (event) {
+      if (!document.getElementById('box').contains(event.target)) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+            document.getElementById("box").classList.remove('dropped');
+            
+          }
+        }
+
+        
+      }
+    }
+
+  </script>
+</body>
+
+</html>
