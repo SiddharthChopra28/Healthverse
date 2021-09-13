@@ -7,3 +7,5 @@ Using our app, the user can monitor his health easily in day-to-day life. The si
 
 You can access our site on the following link:
 https://site.healthverse.repl.co
+
+To install the extension, download the zip file from the site and unzip it. Go to Chrome -> Extensions -> Turn on developer mode -> Load Unpacked -> Add the unzipped folder.
