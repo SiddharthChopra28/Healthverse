@@ -1,0 +1,148 @@
+body{
+    /* background: #2e2e2e; */
+    background-image: linear-gradient(to bottom right, rgb(56, 41, 56), rgb(55, 56, 65));
+    ;
+    min-width: 350px;
+}
+
+
+.head{
+    color: rgb(207, 212, 212);
+    width: 100%;
+    display: flex;
+}
+
+.test-btn{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: auto;
+    margin-right: 0px;
+
+}
+
+.top{
+    font-family: Helvetica, sans-serif;
+}
+
+
+hr{
+    background-color: rgb(172, 169, 169);
+    border-color: rgb(172, 169, 169);
+    border-width: 1px;
+}
+
+#hello{
+    font-size: 25px;
+    font-weight: lighter;
+}
+#name{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#date{
+    font-size: 13px;
+    font-weight: 100;
+
+}
+
+.test-btn{
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+#logo{
+    width: 40px;
+
+}
+
+#logo:hover{
+    transform: scale(1.07);
+    transition: 0.2s;
+}
+
+/* .body{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+.status{
+    color: rgb(171, 172, 169);
+}
+
+.chart-head{
+    color: rgb(171, 172, 169);
+    font-size: 15px;
+    font-weight: 500;
+
+}
+.stat-head{
+    color: rgb(171, 172, 169);
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+.stat-head a{
+    color: rgb(171, 172, 169);
+    font-size: 15px;
+    text-decoration: underline;
+    font-weight: 500;
+
+}
+.statuses{
+    color: rgb(171, 172, 169);
+    font-size: 11px;
+    font-weight: 400;
+    margin-left: 7px;
+
+}
+
+.details{
+    display: block;
+}
+
+.statuses a{
+    color: rgb(171, 172, 169);
+}
+
+
+.inputField {
+
+    border: none;
+    border-bottom: solid rgb(143, 143, 143) 1px;
+    
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-top: 5px;
+    background: none;
+    color: rgba(255, 255, 255, 0.555);
+  
+    height: 25px;
+    width: 300px;
+}
+
+.inputField:focus-visible{
+    outline: none;
+}
+
+.submit{
+    cursor: pointer;
+    margin-left: 65%;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    background: rgb(63, 71, 99);
+    color: rgb(194, 187, 187);
+    width: 80px;
+    padding: 3px;
+    margin-bottom: 10px;
+}
+
+#change{
+    color: rgba(255, 255, 255, 0.555);
+    font-size: 10px;
+    cursor: pointer;
+}
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="head">
+        <div class="top">
+            <span id="hello">Hello,</span>
+            <span id="name"></span>
+            <span id="change">&nbsp;Not you?</span>
+            <br>
+            <span id="date"></span>
+
+        </div>
+        <div class="test-btn">
+            <a href="http://healthverse.azurewebsites.net/" target="_blank">
+                <img src="icon/logo.png" alt="Logo - Visit Site" id="logo">
+            </a>
+
+        </div>
+    </div>
+    <hr>
+    <div id="main">
+        <div class="details">
+            <div style="margin-bottom: 5px;">
+                <span class="stat-head">Your status:</span><br>
+                <span class="statuses">Latest Test Report:</span><span id="latrep" class="statuses"></span><br>
+                <span class="statuses">Last Test: </span>
+                <span id="lattest" class="statuses"></span>
+                <a href="http://healthverse.azurewebsites.net/tests" target="_blank" class='statuses'>Take Test Now!</a><br>
+                <span class="statuses">Last Test Type: </span><span id="lattype"
+                    class="statuses"></span>
+            </div>
+            <div style="margin-left:auto; margin-bottom: 5px;">
+                <span class="stat-head">About:</span><br>
+                <span class="statuses">Age:</span>
+                <span class="statuses" id="age"></span><br>
+                <span class="statuses">Gender:</span>
+                <span class="statuses" id="gender"></span>
+            </div>
+        </div>
+        <div class="body">
+            <span class="chart-head">Your last 5 tests:</span>
+            <canvas id="lineChart"></canvas>
+
+        </div>
+
+    </div>
+
+    <div id="login" hidden>
+        <div class="stat-head" style="margin-bottom: 5px;" id="message">
+            Please login with you Healthverse Account.
+        </div>
+        <form id="form">
+            <input type="email" placeholder="Registered Email" class="inputField" id="email">
+            <input type="password" placeholder="Password" class="inputField" id="pwd">
+            <button class="submit" id="submit">Submit</button>
+
+        </form>
+    </div>
+
+
+    <!-- <script src="graphs.js"></script> -->
+    <script src="crawler.js" type="module"></script>
+
+
+</body>
+
+</html>
